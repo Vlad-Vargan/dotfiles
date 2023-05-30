@@ -12,6 +12,9 @@ function doIt() {
 		--exclude "README.md" \
 		--exclude "LICENSE-MIT.txt" \
 		-avh --no-perms . ~;
+
+	rsync -avh --no-perms .config/ ~/.config/;
+	
 	source ~/.bash_profile;
 }
 
