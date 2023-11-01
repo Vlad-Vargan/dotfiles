@@ -113,11 +113,12 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
+# https://www.tutorialrepublic.com/font-awesome-icons-classes.php
 set $ws1 "1 Browser "
 set $ws2 "2 Chats "
 set $ws3 "3 Database "
 set $ws4 "4 Editor "
-set $ws5 "5"
+set $ws5 "5 Obsidian &#xf20e;"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
@@ -156,12 +157,13 @@ workspace $ws2 output $hdmi
 workspace $ws4 output $laptop
 workspace $ws10 output $hdmi
 
-
+# use xprop
 assign [class="Brave-browser"] $ws1
 assign [class="Slack"] $ws2
 assign [class="TelegramDesktop"] $ws2
 assign [class="pgadmin4"] $ws3
 assign [class="Code"] $ws4
+assign [class="obsidian"] $ws5
 assign [class="Spotify"] $ws10
 
 # reload the configuration file
@@ -268,5 +270,6 @@ exec --no-startup-id Telegram
 exec --no-startup-id slack
 exec --no-startup-id code
 exec --no-startup-id spotify
+exec --no-startup-id obsidian
 
 exec compton -f
